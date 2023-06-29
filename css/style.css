@@ -1,1 +1,68 @@
 /* TODO: Make it awesome */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: antiquewhite;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  width: 90%;
+  max-width: 1000px;
+  margin: 20px auto;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header {
+  width: 90%;
+  padding: 1em 5px;
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+ul {
+  display: flex;
+}
+
+ul > li:first-child {
+  margin-right: 2em;
+}
+
+section {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 10px;
+}
+
+section img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border: 5px solid transparent;
+}
+
+section img:hover {
+  border: 5px solid red;
+}
+
+footer {
+  text-align: center;
+  padding: 2em 0;
+  font-weight: bold;
+}

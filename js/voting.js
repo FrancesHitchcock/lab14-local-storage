@@ -1,12 +1,11 @@
-'use strict';
+"use strict";
 
-
+// change back to 25
 let votingRounds = 25;
 let productIndexArray = [];
 
-let imgElements = document.querySelectorAll('img');
-let imgContainer = document.querySelector('section');
-
+let imgElements = document.querySelectorAll("img");
+let imgContainer = document.querySelector("section");
 
 let state = new AppState();
 state.loadItems();
@@ -16,7 +15,6 @@ function generateRandomProduct() {
 }
 
 function renderProductImages() {
-
   while (productIndexArray.length < 6) {
     let randomProductIndex = generateRandomProduct();
     if (!productIndexArray.includes(randomProductIndex)) {
@@ -25,11 +23,11 @@ function renderProductImages() {
   }
 
   for (let i = 0; i < imgElements.length; i++) {
-    let randomIndex = productIndexArray.shift()
+    let randomIndex = productIndexArray.shift();
 
-    imgElements[i].src = state.allProducts[randomIndex].source
-    imgElements[i].title = state.allProducts[randomIndex].name
-    imgElements[i].alt = state.allProducts[randomIndex].name
+    imgElements[i].src = state.allProducts[randomIndex].source;
+    imgElements[i].title = state.allProducts[randomIndex].name;
+    imgElements[i].alt = state.allProducts[randomIndex].name;
     state.allProducts[randomIndex].timesShown++;
   }
 }
@@ -45,11 +43,11 @@ function handleImageClick(event) {
     }
 
     if (votingRounds === 0) {
-      imgContainer.removeEventListener('click', handleImageClick);
+      imgContainer.removeEventListener("click", handleImageClick);
       state.saveToLocalStorage();
     }
   }
 }
 
 renderProductImages();
-imgContainer.addEventListener('click', handleImageClick);
+imgContainer.addEventListener("click", handleImageClick);
